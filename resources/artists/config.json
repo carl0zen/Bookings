@@ -1,0 +1,77 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "name",
+			"order": 0
+		},
+		"description": {
+			"name": "description",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "description",
+			"order": 1
+		},
+		"twitter": {
+			"name": "twitter",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "twitter",
+			"order": 2
+		},
+		"facebook": {
+			"name": "facebook",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "facebook",
+			"order": 3
+		},
+		"soundcloud": {
+			"name": "soundcloud",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "soundcloud",
+			"order": 4
+		},
+		"lastfm": {
+			"name": "lastfm",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "lastfm",
+			"order": 5
+		},
+		"presskitUrl": {
+			"name": "presskitUrl",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "presskitUrl",
+			"order": 6
+		},
+		"email": {
+			"name": "email",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "email",
+			"order": 7
+		},
+		"telephone": {
+			"name": "telephone",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "telephone",
+			"order": 8
+		}
+	}
+}

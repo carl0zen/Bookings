@@ -3,12 +3,14 @@
 define([
     'underscore',
     'backbone',
-    'models/artists'
-], function (_, Backbone, ArtistsModel) {
+    'models/artist',
+    'crossdomain'
+], function (_, Backbone, ArtistModel) {
     'use strict';
 
     var ArtistsCollection = Backbone.Collection.extend({
-        model: ArtistsModel
+        url: 'http://localhost:2404/artists',
+        model: ArtistModel
     });
 
     return ArtistsCollection;
