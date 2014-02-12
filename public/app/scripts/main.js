@@ -29,8 +29,10 @@ require.config({
 
 
 require([
-    'jquery', 'backbone', 'routes/app', 'views/app'
+    'jquery', 'backbone', 'router', 'views/app'
 ], function ($, Backbone, Router, AppView) {
+
+
 
     window.App = {
         Models: {},
@@ -41,10 +43,10 @@ require([
         Router: Router,
 
         init: function() {
-             new AppView;
+            new AppView;
             new App.Router();
-            Backbone.history.start({pushState:true});
-           
+            Backbone.history.start({pushState:false});
+            return this;
         }
     }
     $(document).ready(function() {

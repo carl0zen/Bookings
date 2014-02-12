@@ -14,8 +14,7 @@ define([
         	'artists': 'loadArtists'
         },
         home: function  () {
-        
-        	App.Vent.trigger('LoadAppView');
+        	App.Vent.trigger('LoadIndex');
         },
         newArtist: function  () {
         	App.Vent.trigger('CreateArtist');		

@@ -4,23 +4,22 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'routes/app',
+    'router',
     'templates',
-    'models/artist',
-    'collections/artists',
-    'views/searchEngine'
-], function ($, _, Backbone, Router, JST, Artist, ArtistsCollection, SearchEngine) {
+    'views/artists'
+], function ($, _, Backbone, Router, JST, ArtistsView) {
     'use strict';
 
     var AppView = Backbone.View.extend({
         template: JST['app/scripts/templates/app.ejs'],
         initialize: function(){
-        	App.Vent.bind('LoadAppView', this.loadAppView);
+        	App.Vent.bind('LoadIndex', this.loadIndex);
         	App.Vent.bind('RenderArtist', this.renderArtist);
         	App.Vent.bind('RenderArtists', this.renderArtists);
         	App.Vent.bind('CreateArtist', this.CreateArtist);
         },
-        loadAppView: function() {
+        loadIndex: function() {
+
         	$('body').css('background','black');
         },
         renderArtist: function(id) {
@@ -29,22 +28,15 @@ define([
         },
         renderArtists: function() {
         	console.log('app view calling render artists');
-        	// fetch all
+        	//Creating Artists View
+
+            var artistsView = new ArtistsView();
+            //artistsView.render();
+            
         },
         loadComponents: function() {
 
-        	//Creating Artist Model
-        	window.artist = new Artist();
-        	//Create Artist Collection
-
-        	window.artistsCollection = new ArtistsCollection();
         	
-        	artistsCollection.fetch({
-        		success: function  (obj) {
-					console.log(obj.toJSON());
-        		}
-        	});
-        	//console.log(artistsCollection.toJSON());
 
 
         	//Create search engine view

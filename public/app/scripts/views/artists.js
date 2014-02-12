@@ -1,35 +1,36 @@
-/*global define*/
 
 define([
     'jquery',
     'underscore',
     'backbone',
     'templates',
+    'models/artist',
     'collections/artists'
-], function ($, _, Backbone, JST, Artists) {
-    'use strict';
+], function ($, _,Backbone,JST,Artist,Artists){
+    //'use strict';
+    console.log('about to create Artists View');
 
     var ArtistsView = Backbone.View.extend({
-        
-        el: '#artists',
+        //template: JST['app/scripts/templates/artists.ejs'],
+        initialize: {
+            //console.log('awesome');
+            //console.log('initializing ArtistsView');
+        }
+    });
+
+    /**
+    var ArtistsView = Backbone.View.extend({
         
         template: JST['app/scripts/templates/artists.ejs'],
-        
-        events: {
-
+        initialize:{
+            console.log('AppView');
         },
-
-        initialize: {
-        	this.artists = new Artists();
-        	this.artists.bind('all', this.render, this);
-        	this.artists.fetch();
-        	console.log(this.artists);
-        },
+       
         render: function  () {
         	this.$el.html(this.template(this.model.toJSON()));
         	return this;
         }
-    });
+    }); **/
 
     return ArtistsView;
 });
