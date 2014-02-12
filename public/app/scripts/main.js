@@ -41,9 +41,10 @@ require([
         Router: Router,
 
         init: function() {
+             new AppView;
             new App.Router();
-            Backbone.history.start();
-            new AppView;
+            Backbone.history.start({pushState:true});
+           
         }
     }
     $(document).ready(function() {

@@ -9,13 +9,21 @@ define([
     var Router = Backbone.Router.extend({
         routes: {
         	'': 'home',
-        	'artists': 'artists'
+        	'artist/create': 'newArtist',
+        	'artist/:id': 'loadArtist',
+        	'artists': 'loadArtists'
         },
         home: function  () {
-        	console.log('home');
+        
+        	App.Vent.trigger('LoadAppView');
         },
-        artists: function  () {
-        	console.log('artists list');
+        newArtist: function  () {
+        	App.Vent.trigger('CreateArtist');		
+        },
+        loadArtist: function  (id) {
+        	App.Vent.trigger('RenderArtist', id);
+        },
+        loadArtists: function  () {
         	App.Vent.trigger('RenderArtists');
         }
 
